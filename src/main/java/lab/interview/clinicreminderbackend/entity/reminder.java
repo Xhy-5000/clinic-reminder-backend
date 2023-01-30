@@ -1,6 +1,5 @@
 package lab.interview.clinicreminderbackend.entity;
 import lombok.Data;
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.io.Serializable;
 @Data
@@ -12,7 +11,7 @@ public class reminder implements Serializable{
     private String detail;
     private Integer isfinished;
     private Timestamp posttime;
-    private Time existtime;
+    private Integer existtime;
     private String priority;
 
     public Integer getReminderid() {
@@ -71,11 +70,11 @@ public class reminder implements Serializable{
         this.posttime = posttime;
     }
 
-    public Time getExisttime() {
+    public Integer getExisttime() {
         return existtime;
     }
 
-    public void setExisttime(Time existtime) {
+    public void setExisttime(Integer existtime) {
         this.existtime = existtime;
     }
 

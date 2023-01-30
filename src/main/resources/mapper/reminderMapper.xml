@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lab.interview.clinicreminderbackend.mapper.reminderMapper">
+    <!--如果mysql列名与java reminder类内的属性名不同可以用resultmap进行匹配->
+<!-    <resultMap id="patientReminderMap" type="">-->
+<!--        -->
+<!--    </resultMap>-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="reminderid">
+        INSERT INTO reminder (
+            reminderid, doctorid, patientid, patientname, detail, isfinished, posttime, existtime, priority
+        ) VALUES (
+            #{reminderid}, #{doctorid}, #{patientid}, #{patientname}, #{detail}, #{isfinished}, #{posttime},
+            #{existtime}, #{priority}
+        )
+    </insert>
+
+    <select id="findByPatientid" resultType="lab.interview.clinicreminderbackend.entity.reminder">
+        SELECT * FROM reminder WHERE patientid = #{patientid}
+    </select>
+</mapper>

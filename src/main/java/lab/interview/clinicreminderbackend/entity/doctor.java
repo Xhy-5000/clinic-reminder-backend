@@ -2,6 +2,8 @@ package lab.interview.clinicreminderbackend.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Objects;
+
 @Data
 public class doctor implements Serializable{
     private Integer doctorid;
@@ -30,5 +32,17 @@ public class doctor implements Serializable{
 
     public void setDoctorpassword(String doctorpassword) {
         this.doctorpassword = doctorpassword;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof doctor doctor)) return false;
+        return Objects.equals(getDoctorid(), doctor.getDoctorid()) && Objects.equals(getDoctorname(), doctor.getDoctorname()) && Objects.equals(getDoctorpassword(), doctor.getDoctorpassword());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getDoctorid(), getDoctorname(), getDoctorpassword());
     }
 }
