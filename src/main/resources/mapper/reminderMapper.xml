@@ -7,11 +7,11 @@
 <!-    <resultMap id="patientReminderMap" type="">-->
 <!--        -->
 <!--    </resultMap>-->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="reminderid">
+    <insert id="insert">
         INSERT INTO reminder (
-            reminderid, doctorid, patientid, patientname, detail, isfinished, posttime, existtime, priority
+            doctorid, patientid, patientname, detail, isfinished, posttime, existtime, priority
         ) VALUES (
-            #{reminderid}, #{doctorid}, #{patientid}, #{patientname}, #{detail}, #{isfinished}, #{posttime},
+            #{doctorid}, #{patientid}, #{patientname}, #{detail}, #{isfinished}, #{posttime},
             #{existtime}, #{priority}
         )
     </insert>

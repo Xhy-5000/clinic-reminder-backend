@@ -21,14 +21,13 @@ public class reminderMapperTests {
     @Test
     public void insert(){
         reminder reminder = new reminder();
-        reminder.setReminderid(4);
         reminder.setDetail("eat A");
         reminder.setDoctorid(1);
         reminder.setPatientid(1);
         reminder.setPatientname("Andy Xia");
         Timestamp now= new Timestamp(System.currentTimeMillis());
         reminder.setPosttime(now);
-        reminder.setExisttime(1*3600);
+        reminder.setExisttime(1);
         reminder.setIsfinished(0);
         reminder.setPriority("MID");
         Integer rows = reminderMapper.insert(reminder);

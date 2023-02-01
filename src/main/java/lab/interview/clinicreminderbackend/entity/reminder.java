@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 import java.io.Serializable;
 @Data
 public class reminder implements Serializable{
-    private Integer reminderid;
     private Integer doctorid;
     private Integer patientid;
     private String patientname;
@@ -13,14 +12,6 @@ public class reminder implements Serializable{
     private Timestamp posttime;
     private Integer existtime;
     private String priority;
-
-    public Integer getReminderid() {
-        return reminderid;
-    }
-
-    public void setReminderid(Integer reminderid) {
-        this.reminderid = reminderid;
-    }
 
     public Integer getDoctorid() {
         return doctorid;
