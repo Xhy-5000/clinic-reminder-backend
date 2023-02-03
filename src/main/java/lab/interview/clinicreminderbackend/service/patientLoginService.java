@@ -21,7 +21,7 @@ public class patientLoginService {
             result.setMsg("successfully login");
             //myResult.setList(userList);
             System.out.println("success");
-            result.setObject(patient);
+            result.setObj(patient);
         }else
         {
             result.setCode(1);

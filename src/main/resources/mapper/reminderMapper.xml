@@ -19,4 +19,8 @@
     <select id="findByPatientid" resultType="lab.interview.clinicreminderbackend.entity.reminder">
         SELECT * FROM reminder WHERE patientid = #{patientid}
     </select>
+
+    <select id="countByidTime" resultType="lab.interview.clinicreminderbackend.entity.reminder">
+        SELECT * FROM reminder WHERE patientid = #{patientid} AND to_days(posttime) = to_days(#{time})
+    </select>
 </mapper>

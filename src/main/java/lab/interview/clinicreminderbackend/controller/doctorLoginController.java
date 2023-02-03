@@ -26,7 +26,7 @@ public class  doctorLoginController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/login" , consumes = "application/json")
+    @RequestMapping(value = "/doctor/login" , consumes = "application/json")
     public Object doctorlogin(@RequestParam("id") int id, @RequestParam("password") String password) {
 
         //logger.info((Supplier<String>) user);

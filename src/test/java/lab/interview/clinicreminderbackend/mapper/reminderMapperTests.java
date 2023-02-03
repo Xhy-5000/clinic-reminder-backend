@@ -42,4 +42,13 @@ public class reminderMapperTests {
         }
 
     }
+
+    @Test
+    public void countByidTime(){
+        Timestamp now= new Timestamp(System.currentTimeMillis());
+        reminder[] reminders = reminderMapper.countByidTime(1,now);
+        for(reminder reminder:reminders){
+            System.out.println(reminder);
+        }
+    }
 }

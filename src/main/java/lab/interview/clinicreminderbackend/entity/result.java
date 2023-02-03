@@ -7,7 +7,7 @@ public class result {
     private int code;//-1:参数不足，-2:权限不足，0:正常应答
     private String msg;//提示信息
     //private List<?> list;
-    private Object object;
+    private Object obj;
     private int count;
 
     public int getCode() {
@@ -26,12 +26,12 @@ public class result {
         this.msg = msg;
     }
 
-    public Object getObject() {
-        return object;
+    public Object getObj() {
+        return obj;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setObj(Object object) {
+        this.obj = object;
     }
 
     public int getCount() {
