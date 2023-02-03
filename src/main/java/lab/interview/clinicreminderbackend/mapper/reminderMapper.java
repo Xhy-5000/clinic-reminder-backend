@@ -9,4 +9,5 @@ public interface reminderMapper {
     Integer insert(reminder reminder);
     reminder[] findByPatientid(int patientid);
     reminder[] countByidTime(int patientid, Timestamp time);
+    reminder[] countByPriority(int patientid, String priority);
 }

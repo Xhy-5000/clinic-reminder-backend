@@ -20,4 +20,12 @@ public class patientMapperTests {
         patient patient = patientMapper.findByid(1);
         System.out.println(patient);
     }
+
+    @Test
+    public void findByDoctorid(){
+        patient[] patients = patientMapper.findByDoctorid(1);
+        for (patient patient:patients){
+            System.out.println(patient);
+        }
+    }
 }

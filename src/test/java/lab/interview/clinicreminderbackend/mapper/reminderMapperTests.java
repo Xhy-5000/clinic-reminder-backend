@@ -51,4 +51,12 @@ public class reminderMapperTests {
             System.out.println(reminder);
         }
     }
+
+    @Test
+    public void countByPriority(){
+        reminder[] reminders = reminderMapper.countByPriority(2,"LOW");
+        for(reminder reminder:reminders){
+            System.out.println(reminder);
+        }
+    }
 }

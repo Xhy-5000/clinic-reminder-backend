@@ -6,4 +6,9 @@
     <select id="findByid" resultType="lab.interview.clinicreminderbackend.entity.patient">
         SELECT * FROM patient WHERE patientid = #{patientid}
     </select>
+
+    <select id="findByDoctorid" resultType="lab.interview.clinicreminderbackend.entity.patient">
+        SELECT * FROM patient WHERE doctorid = #{doctorid}
+    </select>
+
 </mapper>
