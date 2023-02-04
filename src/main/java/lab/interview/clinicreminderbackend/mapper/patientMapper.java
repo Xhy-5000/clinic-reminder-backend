@@ -7,4 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface patientMapper {
     patient findByid(int id);
     patient[] findByDoctorid(int doctorid);
+    Integer insert(patient patient);
 }

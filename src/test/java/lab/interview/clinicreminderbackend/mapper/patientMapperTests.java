@@ -28,4 +28,17 @@ public class patientMapperTests {
             System.out.println(patient);
         }
     }
+
+    @Test
+    public void insert(){
+        for(int i=5; i<=20000;i++){
+            patient patient = new patient();
+            patient.setDoctorid(i/40+1);
+            patient.setPatientname("patient"+i);
+            patient.setPatientpassword("123456");
+            patientMapper.insert(patient);
+            //        System.out.println(patient);
+        }
+
+    }
 }

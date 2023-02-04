@@ -6,4 +6,11 @@
     <select id="findByid" resultType="lab.interview.clinicreminderbackend.entity.doctor">
         SELECT * FROM doctor WHERE doctorid = #{doctorid}
     </select>
+    <insert id="insert">
+        INSERT INTO doctor (
+        doctorname, doctorpassword
+        ) VALUES (
+        #{doctorname}, #{doctorpassword}
+        )
+    </insert>
 </mapper>

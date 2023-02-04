@@ -11,4 +11,12 @@
         SELECT * FROM patient WHERE doctorid = #{doctorid}
     </select>
 
+    <insert id="insert">
+        INSERT INTO patient (
+        patientname, patientpassword, doctorid
+        ) VALUES (
+        #{patientname}, #{patientpassword}, #{doctorid}
+        )
+    </insert>
+
 </mapper>

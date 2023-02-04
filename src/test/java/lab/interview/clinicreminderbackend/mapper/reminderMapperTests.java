@@ -59,4 +59,28 @@ public class reminderMapperTests {
             System.out.println(reminder);
         }
     }
+
+    @Test
+    public void mockDataInsert(){
+//        Timestamp now= new Timestamp(System.currentTimeMillis());
+        long now = System.currentTimeMillis();
+        String[] priority = {"HIGH","MID","LOW"};
+        for(int day=0; day<15; day++){
+            Timestamp time = new Timestamp(now-day*24*3600*1000);
+            for(int i=40;i<80;i++){
+                for(int j=1;j<=15;j++){
+                    reminder reminder = new reminder();
+                    reminder.setDoctorid(2);
+                    reminder.setDetail("mock reminder");
+                    reminder.setPatientid(i);
+                    reminder.setPatientname("patient"+i);
+                    reminder.setExisttime(j);
+                    reminder.setPosttime(time);
+                    reminder.setIsfinished(0);
+                    reminder.setPriority(priority[j%3]);
+                    reminderMapper.insert(reminder);
+                }
+            }
+        }
+    }
 }

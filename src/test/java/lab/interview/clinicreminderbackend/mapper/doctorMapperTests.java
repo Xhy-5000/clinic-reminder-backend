@@ -19,4 +19,16 @@ public class doctorMapperTests {
         doctor doctor = doctorMapper.findByid(1);
         System.out.println(doctor);
     }
+
+    @Test
+    public void insert(){
+        for(int i=4; i<=500;i++){
+            doctor doctor = new doctor();
+            doctor.setDoctorname("doctor"+i);
+            doctor.setDoctorpassword("123456");
+            doctorMapper.insert(doctor);
+//            System.out.println(doctor);
+        }
+
+    }
 }
