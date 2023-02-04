@@ -8,6 +8,8 @@ import java.sql.Timestamp;
 public interface reminderMapper {
     Integer insert(reminder reminder);
     reminder[] findByPatientid(int patientid);
+    reminder findByid(int reminderid);
     reminder[] countByidTime(int patientid, Timestamp time);
     reminder[] countByPriority(int patientid, String priority);
+    Integer finishByid(int reminderid);
 }

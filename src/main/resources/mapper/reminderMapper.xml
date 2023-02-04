@@ -20,6 +20,10 @@
         SELECT * FROM reminder WHERE patientid = #{patientid}
     </select>
 
+    <select id="findByid" resultType="lab.interview.clinicreminderbackend.entity.reminder">
+        SELECT * FROM reminder WHERE reminderid = #{reminderid}
+    </select>
+
     <select id="countByidTime" resultType="lab.interview.clinicreminderbackend.entity.reminder">
         SELECT * FROM reminder WHERE patientid = #{patientid} AND to_days(posttime) = to_days(#{time}) AND isfinished=0
     </select>
@@ -27,4 +31,8 @@
     <select id="countByPriority" resultType="lab.interview.clinicreminderbackend.entity.reminder">
         SELECT * FROM reminder WHERE patientid = #{patientid} AND priority = #{priority}
     </select>
+
+    <update id="finishByid">
+        UPDATE reminder SET isfinished = 1 WHERE (reminderid = #{reminderid});
+    </update>
 </mapper>

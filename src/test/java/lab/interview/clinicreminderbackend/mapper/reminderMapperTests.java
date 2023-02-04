@@ -44,6 +44,12 @@ public class reminderMapperTests {
     }
 
     @Test
+    public void findByid(){
+        reminder reminder = reminderMapper.findByid(1);
+        System.out.println(reminder);
+    }
+
+    @Test
     public void countByidTime(){
         Timestamp now= new Timestamp(System.currentTimeMillis());
         reminder[] reminders = reminderMapper.countByidTime(1,now);
@@ -82,5 +88,10 @@ public class reminderMapperTests {
                 }
             }
         }
+    }
+
+    @Test
+    public void finishByid(){
+        reminderMapper.finishByid(19);
     }
 }
