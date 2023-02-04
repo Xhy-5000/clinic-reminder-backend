@@ -12,14 +12,11 @@ public class patientLoginService {
     private patientMapper patientMapper;
 
     public result login(int id, String password) {
-//        doctor doctor = new doctor();
-//        List<doctor> userList = new ArrayList<>();
         patient patient = patientMapper.findByid(id);
         result result = new result();
         if(patient!=null && password.equals(patient.getPatientpassword())) {
             result.setCode(0);
             result.setMsg("successfully login");
-            //myResult.setList(userList);
             System.out.println("success");
             result.setObj(patient);
         }else

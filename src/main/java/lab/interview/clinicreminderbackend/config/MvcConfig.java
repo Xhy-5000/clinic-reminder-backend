@@ -18,6 +18,12 @@ public class MvcConfig implements WebMvcConfigurer {
                 .allowedMethods("POST","GET","PUT","OPTIONS","DELETE")
                 .allowedHeaders("*")
                 .maxAge(3600);
+        registry.addMapping("/**")
+                .allowCredentials(true)
+                .allowedOrigins("http://localhost:8100")
+                .allowedMethods("POST","GET","PUT","OPTIONS","DELETE")
+                .allowedHeaders("*")
+                .maxAge(3600);
     }
 }
 
