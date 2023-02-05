@@ -29,7 +29,7 @@
     </select>
 
     <select id="countByPriority" resultType="lab.interview.clinicreminderbackend.entity.reminder">
-        SELECT * FROM reminder WHERE patientid = #{patientid} AND priority = #{priority}
+        SELECT * FROM reminder WHERE patientid = #{patientid} AND priority = #{priority} AND isfinished=0
     </select>
 
     <update id="finishByid">

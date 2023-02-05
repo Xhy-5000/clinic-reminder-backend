@@ -12,15 +12,21 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         //所有请求都允许跨域 使用这种方法就不能在interceptor中再配置header了
+//        registry.addMapping("/**")
+//                .allowCredentials(true)
+//                .allowedOrigins("http://localhost/*")
+//                .allowedMethods("POST","GET","PUT","OPTIONS","DELETE")
+//                .allowedHeaders("*")
+//                .maxAge(3600);
+//        registry.addMapping("/**")
+//                .allowCredentials(true)
+//                .allowedOrigins("http://localhost:4200")
+//                .allowedMethods("POST","GET","PUT","OPTIONS","DELETE")
+//                .allowedHeaders("*")
+//                .maxAge(3600);
         registry.addMapping("/**")
                 .allowCredentials(true)
-                .allowedOrigins("http://localhost:4200")
-                .allowedMethods("POST","GET","PUT","OPTIONS","DELETE")
-                .allowedHeaders("*")
-                .maxAge(3600);
-        registry.addMapping("/**")
-                .allowCredentials(true)
-                .allowedOrigins("http://localhost:8100")
+                .allowedOrigins("http://localhost:8100", "http://localhost:4200")
                 .allowedMethods("POST","GET","PUT","OPTIONS","DELETE")
                 .allowedHeaders("*")
                 .maxAge(3600);
