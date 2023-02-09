@@ -7,6 +7,8 @@ import lab.interview.clinicreminderbackend.mapper.reminderMapper;
 import lab.interview.clinicreminderbackend.entity.result;
 import lab.interview.clinicreminderbackend.entity.reminder;
 
+import java.util.Arrays;
+
 @Service
 public class patientShowService {
     @Autowired
@@ -14,6 +16,9 @@ public class patientShowService {
 
     public result showReminder(int id){
         reminder[] reminders = reminderMapper.findByPatientid(id);
+        Arrays.sort(reminders,(reminder r1, reminder r2)->{
+           return r2.getReminderid()-r1.getReminderid();
+        });
         result result = new result();
         result.setCode(0);
         result.setMsg("Successfully get reminders for patient");
